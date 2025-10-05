@@ -1,0 +1,179 @@
+# 🏨 Hostel Room Booking System
+
+A modern, full-stack web application for managing hostel room bookings, built with Laravel (PHP) backend and React (TypeScript) frontend.
+
+## ✨ Features
+
+- **Room Management**: Add, edit, and manage hostel rooms with images and descriptions
+- **Booking System**: Complete booking workflow with guest information
+- **Activity Management**: Book and manage hostel activities
+- **Offer System**: Create and manage special offers
+- **User Authentication**: Secure user registration and login
+- **Admin Dashboard**: Comprehensive admin panel for management
+- **Responsive Design**: Mobile-first design with modern UI components
+- **Real-time Notifications**: Telegram integration for notifications
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Laravel 12** - PHP framework
+- **SQLite** - Database
+- **Laravel Sanctum** - API authentication
+- **Laravel Breeze** - Authentication scaffolding
+
+### Frontend
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Radix UI** - Component library
+- **React Router** - Client-side routing
+- **React Hook Form** - Form management
+- **TanStack Query** - Data fetching
+
+## 🚀 Quick Start
+
+### Prerequisites
+- PHP 8.2+
+- Composer
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd hostel/room_booking
+   ```
+
+2. **Install PHP dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Install frontend dependencies**
+   ```bash
+   cd frontend
+   npm install
+   cd ..
+   ```
+
+4. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. **Database setup**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+
+6. **Start development servers**
+   ```bash
+   # Start both backend and frontend
+   composer run dev
+   
+   # Or start separately:
+   # Backend: php artisan serve
+   # Frontend: cd frontend && npm run dev
+   ```
+
+## 🌐 Deployment
+
+### Netlify (Frontend)
+
+1. **Connect your GitHub repository to Netlify**
+2. **Set build settings:**
+   - Build command: `cd frontend && npm run build`
+   - Publish directory: `frontend/dist`
+   - Base directory: `frontend`
+
+3. **Environment variables** (if needed):
+   - `VITE_API_URL`: Your backend API URL
+
+### Backend Deployment
+
+For the Laravel backend, you can deploy to:
+- **Heroku**
+- **DigitalOcean App Platform**
+- **Laravel Forge**
+- **VPS with Nginx/Apache**
+
+## 📁 Project Structure
+
+```
+├── app/                    # Laravel backend
+│   ├── Http/Controllers/   # API controllers
+│   ├── Models/            # Eloquent models
+│   └── Services/          # Business logic
+├── frontend/              # React frontend
+│   ├── src/
+│   │   ├── components/    # Reusable components
+│   │   ├── pages/         # Page components
+│   │   ├── hooks/         # Custom hooks
+│   │   └── utils/         # Utility functions
+│   └── public/            # Static assets
+├── database/              # Migrations and seeders
+└── routes/                # API routes
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Key environment variables to configure:
+
+```env
+# App
+APP_NAME="Hostel Room Booking"
+APP_URL=http://localhost:8000
+
+# Database
+DB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
+
+# Frontend
+FRONTEND_URL=http://localhost:3000
+
+# Telegram (optional)
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
+
+## 📱 API Endpoints
+
+- `GET /api/rooms` - Get all rooms
+- `POST /api/bookings` - Create new booking
+- `GET /api/activities` - Get all activities
+- `POST /api/activity-bookings` - Book activity
+- `GET /api/offers` - Get all offers
+
+## 🧪 Testing
+
+```bash
+# Run PHP tests
+php artisan test
+
+# Run frontend tests
+cd frontend
+npm run test
+```
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+If you have any questions or need help, please open an issue on GitHub.
